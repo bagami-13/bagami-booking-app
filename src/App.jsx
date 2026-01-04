@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
+import About from "./pages/About";
 import Footer from "./components/Footer"; // Import the new Footer
 import Home from "./pages/Home";
 import Book from "./pages/Book";
@@ -22,6 +23,7 @@ function App() {
               <Route path="/book" element={<Book />} />
               <Route path="/confirm" element={<Confirm />} />
               <Route path="*" element={<Navigate to="/" />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </AnimatePresence>
         </main>

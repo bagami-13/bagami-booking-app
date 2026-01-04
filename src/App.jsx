@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Book from "./pages/Book";
 import Confirm from "./pages/Confirm";
-import About from "./pages/About";
+
 
 function App() {
   return (
@@ -20,8 +20,7 @@ function App() {
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/book" element={<Book />} />
+               <Route path="/book" element={<Book />} />
               <Route path="/confirm" element={<Confirm />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>

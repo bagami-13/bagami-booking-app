@@ -24,9 +24,7 @@ const Home = () => {
             <Link to="/book" className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
               Add Your Event <ArrowRight size={20} />
             </Link>
-            <Link to="/about" className="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all">
-              Learn More
-            </Link>
+  
           </div>
         </motion.div>
       </section>

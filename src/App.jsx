@@ -2,33 +2,33 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Footer from "./components/Footer"; // Import the new Footer
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Book from "./pages/Book";
 import Confirm from "./pages/Confirm";
+import About from "./pages/About";
 
 function App() {
   return (
     <BrowserRouter>
-      {/* flex and flex-col ensures the footer stays at the bottom */}
-      <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-500">
+      {/* min-h-screen keeps footer at bottom; w-full + overflow-x-hidden prevents side-scrolling */}
+      <div className="flex flex-col min-h-screen w-full overflow-x-hidden bg-slate-50 text-slate-900">
         <Navbar />
         
-        <main className="flex-grow pt-14 pb-12 max-w-7xl mx-auto w-full">
+        {/* Main takes up available space. px-4 provides the mobile 'gutters' */}
+        <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
               <Route path="/book" element={<Book />} />
               <Route path="/confirm" element={<Confirm />} />
               <Route path="*" element={<Navigate to="/" />} />
-              <Route path="/about" element={<About />} />
             </Routes>
           </AnimatePresence>
         </main>
 
-        <Footer /> {/* Add Footer here */}
+        <Footer />
       </div>
     </BrowserRouter>
   );

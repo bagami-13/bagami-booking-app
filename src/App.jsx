@@ -14,7 +14,7 @@ function App() {
       <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-500">
         <Navbar />
         
-        <main className="flex-grow pt-14 pb-12 max-w-7xl mx-auto w-full">
+        <main className="flex-grow pt-20 pb-12 max-w-7xl mx-auto w-full">
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />

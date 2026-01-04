@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer"; // Import the new Footer
 import Home from "./pages/Home";
 import Book from "./pages/Book";
 import Confirm from "./pages/Confirm";
@@ -10,15 +10,11 @@ import Confirm from "./pages/Confirm";
 function App() {
   return (
     <BrowserRouter>
-      {/* min-h-screen on mobile can cause large gaps; we use flex-col to keep things tight */}
-      <div className="flex flex-col min-h-screen w-full overflow-x-hidden bg-white text-slate-900">
+      {/* flex and flex-col ensures the footer stays at the bottom */}
+      <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-500">
         <Navbar />
         
-        {/* pt-20: Reduced top padding for mobile 
-            pb-4: Reduced bottom padding to bring footer closer
-            flex-grow: ensures footer stays at bottom only if content is long
-        */}
-        <main className="flex-grow w-full max-w-7xl mx-auto px-4 pt-20 md:pt-32 pb-4">
+        <main className="flex-grow pt-14 pb-12 max-w-7xl mx-auto w-full">
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -30,7 +26,7 @@ function App() {
           </AnimatePresence>
         </main>
 
-        <Footer />
+        <Footer /> {/* Add Footer here */}
       </div>
     </BrowserRouter>
   );

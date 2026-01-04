@@ -10,6 +10,7 @@ const Navbar = () => {
           Bagami Booking
         </Link>
         <div className="flex items-center gap-8">
+          
           <Link to="/home" className="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Home</Link>
           <Link to="/book" className="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Book Slot</Link>
           <ThemeToggle />
